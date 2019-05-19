@@ -39,7 +39,7 @@
                   <b>Gender*:</b>
                 </td>
                 <td>
-                  <input id="gm" type="radio" value="male" name="gender" ng-model="user.gender" ng-value="'male'" checked>Male
+                  <input id="gm" type="radio" value="male" name="gender" checked="checked" ng-model="user.gender" ng-value="'male'">Male
                   <input id="gf" type="radio" name="gender" value="female" ng-model="user.gender" ng-value="'female'">Female
                 </td>
               </tr>

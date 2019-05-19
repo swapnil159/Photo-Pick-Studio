@@ -1,6 +1,5 @@
 var app=angular.module('registration',[]);
 app.controller('reg',function($scope,$http){
-  $scope.msg="WELCOME"
   $scope.user={};
   $scope.send=function(){
     var config={
@@ -12,12 +11,19 @@ app.controller('reg',function($scope,$http){
           'Gender' : $scope.user.gender,
           'Email' : $scope.user.email,
           'Username' : $scope.user.username,
-          'Password' : $scope.user.pass
+          'Password' : $scope.user.pass,
+          'CPassword' : $scope.user.cpass
       }
     }
     var request = $http(config);
     request.then(function(response){
-      location='index.php';
+      alert(response.data);
+      var temp=response.data;
+      var res="You have been successfully registered";
+      if(temp === res)
+      {
+        location='index.php';
+      }
     },function(error){
       alert('Something went wrong.Please try again');
     });

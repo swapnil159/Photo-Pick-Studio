@@ -6,12 +6,6 @@
 
       $conn=mysqli_connect($servername,$username,$password,$dbname);
 
-      ini_set('display_errors',1);
-      error_reporting(E_ALL);
-      if(!$conn)
-      {
-        die("Connection Failed: ".mysqli_connect_error());
-      }
       $postdata = file_get_contents("php://input");
       $request = json_decode($postdata);
 
@@ -21,14 +15,23 @@
       $email = $request->Email;
       $username = $request->Username;
       $password = $request->Password;
+      $cpassword = $request->CPassword;
 
-      $query = "INSERT INTO Register (First_Name,Last_Name,Gender,Email,Username,Password) VALUES ('$fname','$lname','$gender','$email','$username','$password')";
-      $result = mysqli_query($conn,$query);
-      if($result)
+      $qur="SELECT * FROM Register WHERE Username='$username'";
+      $res=mysqli_query($conn,$qur);
+
+      if(mysqli_num_rows($res)>0)
       {
-        echo "Success";
+        echo "Username already exists";
       }
-      else {
-        echo "Failure";
+      else if($password!=$cpassword)
+      {
+        echo "Passwords do not match";
+      }
+      else
+      {
+        $query = "INSERT INTO Register (First_Name,Last_Name,Gender,Email,Username,Password) VALUES ('$fname','$lname','$gender','$email','$username','$password')";
+        $result = mysqli_query($conn,$query);
+        echo "You have been successfully registered";
       }
 ?>
