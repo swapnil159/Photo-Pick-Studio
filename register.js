@@ -22,7 +22,7 @@ app.controller('reg',function($scope,$http){
       var res="You have been successfully registered";
       if(temp === res)
       {
-        location='index.php';
+        location='upload.php';
       }
     },function(error){
       alert('Something went wrong.Please try again');

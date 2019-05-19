@@ -1,4 +1,5 @@
 <?php
+      session_start();
       $servername='localhost';
       $username='root';
       $password='swapnil159';
@@ -32,6 +33,7 @@
       {
         $query = "INSERT INTO Register (First_Name,Last_Name,Gender,Email,Username,Password) VALUES ('$fname','$lname','$gender','$email','$username','$password')";
         $result = mysqli_query($conn,$query);
+        $_SESSION['user']=$username;
         echo "You have been successfully registered";
       }
 ?>
