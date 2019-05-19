@@ -26,5 +26,7 @@ upload.controller('upload_pic', ['$scope', '$http', function ($scope, $http) {
     alert('Please try again');
   });
  }
-
+ $scope.skip=function(){
+   location='dashboard.php';
+ }
 }]);

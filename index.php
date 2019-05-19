@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>Login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="login.js"></script>
   </head>
-  <body>
+  <body ng-app="login">
     <br /><br /><br />
     <div>
-      <form>
+      <form name="LoginForm" ng-controller="login_dash" ng-submit="in()">
       <table cellspacing="50">
         <thead>
         <tr>
@@ -21,7 +22,7 @@
             <b>USERNAME:</b>
           </td>
           <td>
-            <input id="user" type="text" value="" name="username" size="30" placeholder="Enter your roll number." required>
+            <input id="user" type="text" value="" name="username" size="30" ng-model="user.username" placeholder="Enter your username." required>
           </td>
         </tr>
         <tr>
@@ -29,7 +30,7 @@
             <b>PASSWORD:</b>
           </td>
           <td>
-            <input id="password" type="password" value="" name="pass" size="30" placeholder="Enter your password." required>
+            <input id="password" type="password" value="" name="pass" size="30" ng-model="user.password" placeholder="Enter your password." required>
           </td>
         </tr>
         <tr>
