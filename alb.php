@@ -21,8 +21,6 @@
   $AlbumName = $request->Album_Name;
   $AlbumDescription = $request->Album_Description;
 
-  echo $AlbumName;
-
 
   $my_date = date("Y-m-d H:i:s");
 

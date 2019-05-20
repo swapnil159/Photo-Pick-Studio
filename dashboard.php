@@ -15,12 +15,12 @@
   <head>
     <title>DASHBOARD</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="angular-route.min.js"></script>
   </head>
   <body>
     <div id="menu">
       <nav id="bar">
         <ul>
+          <li><a href="profile.php">VIEW PROFILE</a>
           <li><a href="album.php">CREATE ALBUM</a>
           <li><a href="profile_update.php">UPDATE PROFILE</a>
           <li><a href="#">LOG OUT</a>
