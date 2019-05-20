@@ -9,7 +9,7 @@
   <div id="menu">
     <nav id="bar">
       <ul>
-        <li><a href="#">CREATE ALBUM</a>
+        <li><a href="create_album.php">CREATE ALBUM</a>
         <li><a href="profile_update.php">UPDATE PROFILE</a>
         <li><a href="#">LOG OUT</a>
       </ul>
