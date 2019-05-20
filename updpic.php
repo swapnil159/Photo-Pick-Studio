@@ -11,14 +11,10 @@
 
       $filename = $_FILES['file']['name'];
 
-
-
       $fil=$_FILES['file'];
 
-      if(move_uploaded_file($fil['tmp_name'], __DIR__.'/pp/'.$filename))
+      if(move_uploaded_file($fil['tmp_name'], __DIR__.'/pp/'.$user))
       {
-        $query="UPDATE Register SET Filename='$filename' WHERE Username='$user'";
-        $res=mysqli_query($conn,$query);
         echo "Profile Pic successfully uploaded";
       }
       else {
