@@ -11,6 +11,8 @@
 <html>
   <head>
     <title>PROFILE PAGE</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="profile.js"></script>
   </head>
   <body>
     <div>
@@ -37,28 +39,15 @@
       </table>
       <hr>
     </div>
-    <div>
-      <table cellspacing="45">
-      <?php
-        $query="SELECT Album_Name,Album_Description,date_time,Cover FROM Album WHERE Username='$user'";
-        $result=mysqli_query($conn,$query);
-
-        while($row = mysqli_fetch_array($result))
-        {?>
-          <tr>
-            <td>
-              <div>
-                <img height="100" width="100" src=<?php echo "ALBUMS/".$user."/".$row['Album_Name']."/".$row['Cover'] ?>><br/>
-                <a href=<?php echo "Display_Album.php?id=&album=".$row['Album_Name'] ?>><?php echo $row['Album_Name'] ?></a>
-              </div>
-            </td>
-            <td>Created on <?php echo $row['date_time'] ?></td>
-            <td><?php echo $row['Album_Description'] ?></td>
-          </tr>
-        <?php
-        }
-      ?>
-    </table>
+    <div ng-app="profile" ng-controller="display">
+      <table>
+        <tr ng-repeat="x in disp">
+          <td><img height="100" width="100" src="{{x.path}}"><br />
+          <a ng-href="pic_display.php?name={{x.name}}">{{x.name}}</a></td>
+          <td>Created on {{x.dat}}</td>
+          <td>{{x.desc}}</td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
