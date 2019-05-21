@@ -19,6 +19,30 @@ app.controller('pic',function($scope,$http,$location){
   }
   var request = $http(config);
   request.then(function(response){
+    console.log(response.data);
     $scope.pic=response.data;
   })
+});
+
+app.controller('likes',function($scope,$http,$location,$window){
+  var temp=$location.search().user;
+  var temp1=$location.search().alb;
+  $scope.name=temp;
+  $scope.album=temp1;
+  $scope.change=function(){
+    var config= {
+      method : 'POST',
+      url : 'likes.php',
+      data : {
+        'Name' : $scope.name,
+        'Album' : $scope.album,
+        'Pic' : $scope.x.pic
+      }
+    }
+    var request=$http(config);
+    request.then(function(response){
+      //console.log(response.data);
+      $window.location.reload();
+    });
+  }
 });

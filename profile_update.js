@@ -1,6 +1,6 @@
 var app=angular.module('profile',[]);
 
-app.controller('upd',function($scope,$http){
+app.controller('upd',function($scope,$http,$window){
   $scope.user={};
   var config={
     method: 'GET',
@@ -32,5 +32,32 @@ app.controller('upd',function($scope,$http){
     },function(error){
       alert('Something went wrong. Please try again');
     })
+  }
+
+  $scope.rem=function(){
+    var config= {
+      method : 'DELETE',
+      url : 'dp_remove.php'
+    }
+    var res=$http(config);
+    res.then(function(){
+      location='profile_update.php';
+    })
+  }
+
+  $scope.upload=function(){
+    var fd = new FormData();
+    var files = document.getElementById('file').files[0];
+    fd.append('file',files);
+
+    $http({
+     method: 'post',
+     url: 'updpic.php',
+     data: fd,
+     headers: {'Content-Type': undefined}
+   }).then(function(response){
+     alert(response.data);
+     $window.location.reload();
+   })
   }
 });

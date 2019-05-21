@@ -15,6 +15,7 @@
     <div id="menu">
       <nav id="bar">
         <ul>
+          <li><a href="dashboard.php">HOME</a>
           <li><a href="profile.php">VIEW PROFILE</a>
           <li><a href="album.php">CREATE ALBUM</a>
           <li><a href="profile_update.php">UPDATE PROFILE</a>
@@ -32,7 +33,7 @@
     <div ng-app="feed" ng-controller="newsfeed">
       <table>
         <tr ng-repeat="x in feeds">
-          <td><img ng-src="{{x.path}}" height="100" width="100" alt="def.jpg"></td>
+          <td><img ng-src="{{x.path}}" height="100" width="100" alt="No image found" onerror=this.src="def.jpg"></td>
           <td><a ng-href="user_profile.php?user={{x.name}}">{{x.name}}</a></td>
         </tr>
       </table>

@@ -13,6 +13,7 @@
     <div id="menu">
       <nav id="bar">
         <ul>
+          <li><a href="dashboard.php">HOME</a>
           <li><a href="profile.php">VIEW PROFILE</a>
           <li><a href="album.php">CREATE ALBUM</a>
           <li><a href="profile_update.php">UPDATE PROFILE</a>
@@ -65,8 +66,16 @@
       {
         $query="INSERT INTO Album (Username,Album_Name,date_time,Cover) VALUES ('$user','$album','$my_date','$filename')";
       }
-      $result=mysqli_query($conn,$query);
+
       $location="/var/www/html/ALBUMS/".$user."/".$album;
+      if(is_dir($location))
+      {
+        echo '<script type="text/javascript">
+        alert("Album already exists");
+        </script>';
+        header('location: album.php');
+      }
+      $result=mysqli_query($conn,$query);
       if(move_uploaded_file($file['tmp_name'],$location."/".$file['name']))
       {
         echo "Success";

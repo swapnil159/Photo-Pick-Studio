@@ -9,7 +9,7 @@
   $cov=mysqli_fetch_assoc($result);
   $cover=$cov['Cover'];
 
-  $size=$rcov['Size'];
+  $size=$cov['Size'];
 ?>
 
 <!Doctype html>
@@ -85,7 +85,7 @@
 
       $query="UPDATE Album SET Size=$size WHERE Album_Name='$album' AND Username='$user'";
       $result=mysqli_query($conn,$query);
-      
+
       header('location: crtalbum.php?album='.$album);
     }
     else {

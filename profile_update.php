@@ -1,3 +1,8 @@
+<?php
+  include 'conn.php';
+  $user=$_SESSION['user'];
+?>
+
 <!Doctype html>
 <html>
 <head>
@@ -5,7 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="profile_update.js"></script>
 </head>
-<body ng-app="profile">
+<body ng-app="profile" ng-controller="upd" >
   <div id="menu">
     <nav id="bar">
       <ul>
@@ -16,7 +21,22 @@
       </ul>
     </nav>
   </div>
-  <form name="pro_upd" ng-controller="upd" ng-submit="update()">
+  <form>
+    <table cellspacing="40">
+      <tr>
+        <td><img height="200" src=<?php echo "pp/".$user ?> alt="No Image" onerror=this.src="def.jpg"></td>
+      </tr>
+      <tr>
+        <td><input id="file" name="file" type="file"></td>
+      </tr>
+        <td><button ng-click="upload()">UPLOAD</button></td>
+        <td><button ng-click="rem()">REMOVE</button></td>
+      <tr>
+      </tr>
+    </table>
+  </form>
+  <hr>
+  <form name="pro_upd"  ng-submit="update()" >
   <div>
     <table cellspacing="40">
       <div>

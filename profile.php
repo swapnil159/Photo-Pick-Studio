@@ -18,6 +18,7 @@
     <div id="menu">
       <nav id="bar">
         <ul>
+          <li><a href="dashboard.php">HOME</a>
           <li><a href="profile.php">VIEW PROFILE</a>
           <li><a href="album.php">CREATE ALBUM</a>
           <li><a href="profile_update.php">UPDATE PROFILE</a>
@@ -25,7 +26,6 @@
         </ul>
       </nav>
     </div>
-    <div>
       <h1>WELCOME  <?php echo $user ?> </h1>
     </div>
     <div>

@@ -10,6 +10,9 @@
   $query="DELETE FROM Album WHERE Album_name='$name' AND Username='$user'";
   $result=mysqli_query($conn,$query);
 
+  $query="DELETE FROM Photo WHERE Album_name='$name' AND Username='$user'";
+  $result=mysqli_query($conn,$query);
+
   function deleteDir($path) {
     return is_file($path) ?
             @unlink($path) :
