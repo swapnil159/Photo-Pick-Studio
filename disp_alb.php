@@ -16,7 +16,7 @@
           <h1>{{album}}</h1>
         </tr>
         <tr ng-repeat="x in pic">
-          <td><img height="100" width="100" ng-src="{{x.path}}"></td>
+          <td><img height="100" width="100" ng-src="{{x.path}}" alt="No Images found"></td>
           <td>Created on {{x.dat}}</td>
           <td>{{x.desc}}</td>
         </tr>

@@ -32,15 +32,11 @@
   }
   if($currpass!=$conpass)
   {
-    echo '<script type="text/javascript">
-    alert("Enter correct password");
-    </script>';
+    echo "Enter correct password";
   }
   else if($newpass!=$cnewpass)
   {
-    echo '<script type="text/javascript">
-    alert("Passwords did not match");
-    </script>';
+    echo "Passwords did not match";
   }
   else {
     $que="UPDATE Register SET First_Name='$fname' , Last_Name='$lname' , Gender='$gender' , Email='$email', Password='$newpass'";

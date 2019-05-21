@@ -14,7 +14,7 @@
   $rows=array();
   while($row=mysqli_fetch_assoc($result))
   {
-    $temp=Array("path"=>"ALBUMS/".$user."/".$album."/".$row['Photo_Name'],"desc"=>$row['Description'],"dat"=>$row['date_time']);
+    $temp=Array("path"=>"ALBUMS/".$user."/".$album."/".$row['Photo_Name'],"desc"=>$row['Description'],"dat"=>$row['date_time'],"name"=>$row['Photo_Name']);
     $rows[]=$temp;
   }
 

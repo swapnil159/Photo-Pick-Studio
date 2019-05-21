@@ -24,7 +24,7 @@
     </div>
     <table>
       <tr>
-        <td><img height="100" width="100" src=<?php echo "pp/".$user ?> alt="def.jpg"></td>
+        <td><img height="100" width="100" src=<?php echo "pp/".$user ?> alt="Not Found" onerror=this.src="def.jpg"></td>
         <td><h2> <?php echo $user ?><h2></td>
       </tr>
     </table>

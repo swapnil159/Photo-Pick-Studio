@@ -13,7 +13,7 @@ app.controller('upd',function($scope,$http){
 
   $scope.update=function(){
     var config={
-      method : 'POST',
+      method : 'PUT',
       url : 'update.php',
       data : {
         'First_Name' : $scope.user.fname,
