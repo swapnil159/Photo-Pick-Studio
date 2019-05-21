@@ -60,7 +60,8 @@
       {
         $query="INSERT INTO Album (Username,Album_Name,Album_Description,date_time,Cover) VALUES ('$user','$album','$desc','$my_date','$filename')";
       }
-      else {
+      else
+      {
         $query="INSERT INTO Album (Username,Album_Name,date_time,Cover) VALUES ('$user','$album','$my_date','$filename')";
       }
       $result=mysqli_query($conn,$query);
@@ -74,7 +75,8 @@
 
       header('location: crtalbum.php');
     }
-    else {
+    else
+    {
       echo '<script type="text/javascript">
       alert("Cover Pic not uploaded");
       </script>';
