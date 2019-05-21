@@ -16,7 +16,6 @@ app.controller('album',function($scope,$http,$location){
   }
     var request=$http(config);
     request.then(function(response){
-      console.log(response.data);
       $scope.prof=response.data;
     })
 });

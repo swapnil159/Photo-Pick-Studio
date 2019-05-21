@@ -1,5 +1,6 @@
 <?php
   include 'conn.php';
+  $user=$_SESSION['user'];
 ?>
 
 <!Doctype html>
