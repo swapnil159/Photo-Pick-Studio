@@ -19,7 +19,6 @@ app.controller('pic',function($scope,$http,$location){
   }
   var request = $http(config);
   request.then(function(response){
-    console.log(response.data);
     $scope.pic=response.data;
   })
 });
@@ -41,7 +40,6 @@ app.controller('likes',function($scope,$http,$location,$window){
     }
     var request=$http(config);
     request.then(function(response){
-      //console.log(response.data);
       $window.location.reload();
     });
   }
