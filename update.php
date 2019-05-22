@@ -26,7 +26,6 @@
 
   if(strlen($newpass)==0)
   {
-    echo "ty ";
     $newpass=$currpass;
     $cnewpass=$newpass;
   }
@@ -39,7 +38,7 @@
     echo "Passwords did not match";
   }
   else {
-    $que="UPDATE Register SET First_Name='$fname' , Last_Name='$lname' , Gender='$gender' , Email='$email', Password='$newpass'";
+    $que="UPDATE Register SET First_Name='$fname' , Last_Name='$lname' , Gender='$gender' , Email='$email', Password='$newpass' WHERE Username='$user'";
     $res=mysqli_query($conn,$que);
     echo "successfully updated";
   }

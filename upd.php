@@ -35,6 +35,26 @@
         $result = mysqli_query($conn,$query);
         $_SESSION['user']=$username;
         mkdir("/var/www/html/ALBUMS/".$username);
+
+        require_once('PHPMailer/PHPMailerAutoload.php');
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'swapphotogallery@gmail.com';
+        $mail->Password = 'swapnil159';
+        $mail->setFrom('SwapPhotoGallery@gmail.com');
+
+        $mail->Subject = 'Gallery Registration';
+        $mail->Body = 'Congratulations !! You have been successfully registered '.$username;
+        $mail->addAddress($email);
+
+        $mail->send();
+
+
+
         echo "You have been successfully registered";
       }
 ?>

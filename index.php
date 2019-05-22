@@ -46,7 +46,7 @@
           </td>
           <td></td>
           <td>
-            <a href="">Forgot Password?</a>
+            <a href="forget.php">Forgot Password?</a>
           </td>
         </tr>
       </tfoot>
