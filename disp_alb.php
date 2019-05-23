@@ -20,6 +20,7 @@
           <td>Created on {{x.dat}}</td>
           <td>{{x.desc}}</td>
           <td><button ng-click="change()" ng-model="obj.name">{{x.state}}</button></td>
+          <td><a ng-href="view_pic.php?user={{name}}&album={{album}}&pic={{x.pic}}">VIEW</a></td>
         </tr>
       </table>
     </div>

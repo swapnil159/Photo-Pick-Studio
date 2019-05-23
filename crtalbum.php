@@ -33,6 +33,12 @@
             <td><textarea rows="5" cols="50" name="description"></textarea>
           </tr>
           <tr>
+            <td><b>Privacy:<b></td>
+            <td><input id="pu" type="radio" value="public" name="privacy" checked>Public
+                <input id="pr" type="radio" name="privacy" value="private">Private
+                <input id="pro" type="radio" name="privacy" value="protected">Protected</td>
+          </tr>
+          <tr>
             <td align="center"><a href="dashboard.php">Skip</a></td>
             <td align="center"><input type='submit' value='Upload' id='upload' name="submit"></td>
           </tr>
@@ -51,6 +57,7 @@
       $my_date = date("Y-m-d H:i:s");
       $file=$_FILES['file'];
       $name=$file['name'];
+      $privacy=$_POST['privacy'];
 
       $size=$size+1;
       if($size>1000)
@@ -66,10 +73,10 @@
 
       if(strlen($desc)>0)
       {
-        $query="INSERT INTO Photo (Username,Album_Name,Photo_Name,date_time,Description) VALUES ('$user','$album','$name','$my_date','$desc')";
+        $query="INSERT INTO Photo (Username,Album_Name,Photo_Name,date_time,Description,Privacy) VALUES ('$user','$album','$name','$my_date','$desc','$privacy')";
       }
       else {
-        $query="INSERT INTO Photo (Username,Album_Name,Photo_Name,date_time) VALUES ('$user','$album','$name','$my_date')";
+        $query="INSERT INTO Photo (Username,Album_Name,Photo_Name,date_time,Privacy) VALUES ('$user','$album','$name','$my_date','$privacy')";
       }
 
       $result=mysqli_query($conn,$query);
