@@ -18,6 +18,17 @@
     <script src="forget.js"></script>
   </head>
   <body ng-app="forget">
+    <div id="menu">
+      <nav id="bar">
+        <ul>
+          <li><a href="dashboard.php">HOME</a>
+          <li><a href="profile.php">VIEW PROFILE</a>
+          <li><a href="album.php">CREATE ALBUM</a>
+          <li><a href="profile_update.php">UPDATE PROFILE</a>
+          <li><a href="log_out.php">LOG OUT</a>
+        </ul>
+      </nav>
+    </div>
     <main>
       <form name="fpass" ng-controller="pass" ng-submit="change()">
         <table>

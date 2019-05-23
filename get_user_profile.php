@@ -7,7 +7,7 @@
 
   $username = $request->Name;
 
-  $query="SELECT Album_Name,Cover FROM Album WHERE Username='$username'";
+  $query="SELECT Album_Name,Cover FROM Album WHERE Username='$username' AND Privacy='public'";
   $result=mysqli_query($conn,$query);
 
   $rows=array();

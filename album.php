@@ -17,7 +17,7 @@
           <li><a href="profile.php">VIEW PROFILE</a>
           <li><a href="album.php">CREATE ALBUM</a>
           <li><a href="profile_update.php">UPDATE PROFILE</a>
-          <li><a href="#">LOG OUT</a>
+          <li><a href="log_out.php">LOG OUT</a>
         </ul>
       </nav>
     </div>
@@ -37,6 +37,12 @@
             <td><input id="userfile" name="userfile" type="file" required></td>
           </tr>
           <tr>
+            <td><b>Privacy:<b></td>
+            <td><input id="pu" type="radio" value="public" name="privacy" checked>Public
+                <input id="pr" type="radio" name="privacy" value="private">Private
+                <input id="pro" type="radio" name="privacy" value="protected">Protected</td>
+          </tr>
+          <tr>
             <td colspan="3" align="center"><input type="submit" value="SUBMIT" name="submit_button"></td>
           </tr>
         </table>
@@ -54,17 +60,18 @@
       $desc=$_POST['description'];
       $file=$_FILES['userfile'];
       $filename=$file['name'];
+      $privacy=$_POST['privacy'];
 
       mkdir("/var/www/html/ALBUMS/".$user."/".$album);
       $my_date = date("Y-m-d H:i:s");
 
       if(strlen($desc)>0)
       {
-        $query="INSERT INTO Album (Username,Album_Name,Album_Description,date_time,Cover) VALUES ('$user','$album','$desc','$my_date','$filename')";
+        $query="INSERT INTO Album (Username,Album_Name,Album_Description,date_time,Cover,Privacy) VALUES ('$user','$album','$desc','$my_date','$filename','$privacy')";
       }
       else
       {
-        $query="INSERT INTO Album (Username,Album_Name,date_time,Cover) VALUES ('$user','$album','$my_date','$filename')";
+        $query="INSERT INTO Album (Username,Album_Name,date_time,Cover,Privacy) VALUES ('$user','$album','$my_date','$filename','$privacy')";
       }
 
       $location="/var/www/html/ALBUMS/".$user."/".$album;
@@ -73,7 +80,7 @@
         echo '<script type="text/javascript">
         alert("Album already exists");
         </script>';
-        header('location: album.php');
+        header('pages/location: album.php');
       }
       $result=mysqli_query($conn,$query);
       if(move_uploaded_file($file['tmp_name'],$location."/".$file['name']))

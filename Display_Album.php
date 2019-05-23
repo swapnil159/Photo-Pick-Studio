@@ -14,6 +14,17 @@
     <title>DISPLAY ALBUM</title>
   </head>
   <body>
+    <div id="menu">
+      <nav id="bar">
+        <ul>
+          <li><a href="dashboard.php">HOME</a>
+          <li><a href="profile.php">VIEW PROFILE</a>
+          <li><a href="album.php">CREATE ALBUM</a>
+          <li><a href="profile_update.php">UPDATE PROFILE</a>
+          <li><a href="log_out.php">LOG OUT</a>
+        </ul>
+      </nav>
+    </div>
     <div>
       <img height="500" src=<?php echo "ALBUMS/".$user."/".$album."/".$cover ?>>
     </div>

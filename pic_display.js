@@ -16,6 +16,7 @@ app.controller('disp',function($scope,$http,$location){
   }
   var request=$http(config);
   request.then(function(response){
+    console.log(response.data);
     $scope.pics=response.data;
   })
 });

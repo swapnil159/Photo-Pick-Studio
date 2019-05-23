@@ -9,6 +9,18 @@
   $name=$request->User;
   $album=$request->Album;
 
+  $query="SELECT Privacy FROM Album WHERE Username='$name' AND Album_Name='$album'";
+  $result=mysqli_query($conn,$query);
+
+  $row=mysqli_fetch_assoc($result);
+
+  $priv=$row['Privacy'];
+
+  if($priv=="private")
+  {
+    header('location: index.php');
+  }
+
 
   $query="SELECT Photo_Name,date_time,Description FROM Photo WHERE Username='$name' AND Album_Name='$album'";
   $result=mysqli_query($conn,$query);

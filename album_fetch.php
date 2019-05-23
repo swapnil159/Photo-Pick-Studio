@@ -8,7 +8,7 @@
 
   $album = $request->Album_Name;
 
-  $query="SELECT Photo_Name,Description,date_time FROM Photo WHERE Username='$user' AND Album_Name='$album' AND Privacy='public'";
+  $query="SELECT Photo_Name,Description,date_time FROM Photo WHERE Username='$user' AND Album_Name='$album'";
   $result=mysqli_query($conn,$query);
 
   $rows=array();

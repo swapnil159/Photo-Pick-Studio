@@ -8,6 +8,17 @@
     <script src="register.js"></script>
   </head>
   <body>
+    <div id="menu">
+      <nav id="bar">
+        <ul>
+          <li><a href="dashboard.php">HOME</a>
+          <li><a href="profile.php">VIEW PROFILE</a>
+          <li><a href="album.php">CREATE ALBUM</a>
+          <li><a href="profile_update.php">UPDATE PROFILE</a>
+          <li><a href="log_out.php">LOG OUT</a>
+        </ul>
+      </nav>
+    </div>
     <div ng-app="registration">
       <h1>REGISTER</h1>
       <form name="registrationform"  ng-controller="reg" ng-submit="send()">
