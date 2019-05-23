@@ -13,7 +13,6 @@ app.controller('login_dash',function($scope,$http){
     var request = $http(config);
     request.then(function(response){
       var temp=response.data;
-      alert(response.data);
       var str="Success";
       if(temp===str){
         location='dashboard.php';

@@ -4,6 +4,7 @@
     <title>FORGOT PASSWORD</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="forget2.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body ng-app="forget">
     <div id="menu">
@@ -17,23 +18,23 @@
         </ul>
       </nav>
     </div>
-    <main>
+    <main style="padding-top: 100px">
       <form name="fpass" ng-controller="pass" ng-submit="change()">
-        <table>
+        <table cellspacing="40" style="border: 1px solid black;box-shadow: 5px 10px #888888;margin-top:150px;" align="center">
             <tr>
-              <td>Username:</td>
+              <td><b>Username:<b></td>
               <td colspan="2"><input type="text" name="user" ng-model="user" placeholder="Enter the username"></td>
             </tr>
             <tr>
-              <td>OTP:</td>
+              <td><b>OTP:<b></td>
               <td colspan="2"><input type="number" name="otp" ng-model="otp" placeholder="Enter the OTP"></td>
             </tr>
             <tr>
-              <td>New Password:</td>
+              <td><b>New Password:<b></td>
               <td colspan="2"><input type="password" name="pass" ng-model="pass" placeholder="Enter the new password"></td>
             </tr>
             <tr>
-              <td colspan="3"><input type="submit" name="submit" value="SUBMIT"></td>
+              <td colspan="3" align="center"><input type="submit" name="submit" value="SUBMIT"></td>
             </tr>
         </table>
       </form>

@@ -10,6 +10,7 @@
     <title>DASHBOARD</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="dashboard.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="menu">
@@ -23,20 +24,23 @@
         </ul>
       </nav>
     </div>
-    <table>
+    <div>
+    <table style="padding-top: 100px;" cellspacing="20">
       <tr>
         <td><img height="100" width="100" src=<?php echo "pp/".$user ?> alt="Not Found" onerror=this.src="def.jpg"></td>
-        <td><h2> <?php echo $user ?><h2></td>
+        <td style="vertical-align:bottom;text-align:center;"><h2> <?php echo $user ?><h2></td>
       </tr>
     </table>
     <hr>
-    <div ng-app="feed" ng-controller="newsfeed">
-      <table>
+    <h1><center>USERS<center></h1>
+    <div ng-app="feed" ng-controller="newsfeed" style="padding-top: 80px">
+      <table cellspacing="40">
         <tr ng-repeat="x in feeds">
           <td><img ng-src="{{x.path}}" height="100" width="100" alt="No image found" onerror=this.src="def.jpg"></td>
-          <td><a ng-href="user_profile.php?user={{x.name}}">{{x.name}}</a></td>
+          <td><a ng-href="user_profile.php?user={{x.name}}" style="text-decoration: none">{{x.name}}</a></td>
         </tr>
       </table>
     </div>
+  </div>
   </body>
 </html>

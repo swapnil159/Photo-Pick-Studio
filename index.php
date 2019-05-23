@@ -10,7 +10,7 @@
     <br /><br /><br />
     <div>
       <form name="LoginForm" ng-controller="login_dash" ng-submit="in()">
-      <table cellspacing="50">
+      <table cellspacing="50" style="border: 1px solid black;box-shadow: 5px 10px #888888;margin-top:150px;" align="center">
         <thead>
         <tr>
           <th colspan="3" align="center" style="font-size:20pt"><u>LOGIN</u></th>
@@ -42,11 +42,11 @@
       <tfoot>
         <tr>
           <td align="center">
-            <a href="register.php">New User?</a>
+            <a href="register.php" style="text-decoration: none;">New User?</a>
           </td>
           <td></td>
           <td>
-            <a href="forget.php">Forgot Password?</a>
+            <a href="forget.php" style="text-decoration: none;">Forgot Password?</a>
           </td>
         </tr>
       </tfoot>

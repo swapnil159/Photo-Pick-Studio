@@ -16,6 +16,7 @@
     <title>FORGOT PASSWORD</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="forget.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body ng-app="forget">
     <div id="menu">
@@ -29,14 +30,9 @@
         </ul>
       </nav>
     </div>
-    <main>
+    <main style="padding-top: 100px;">
       <form name="fpass" ng-controller="pass" ng-submit="change()">
-        <table>
-          <thead>
-            <tr>
-              <td colspan="3">Enter the registered E-mail</td>
-            </tr>
-          </thead>
+        <table cellspacing="40" style="border: 1px solid black;box-shadow: 5px 10px #888888;margin-top:150px;" align="center">
           <tbody>
             <tr>
               <td>E-mail:</td>
@@ -45,7 +41,7 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="3"><input type="submit" name="submit" value="SUBMIT"></td>
+              <td colspan="3" align="center"><input type="submit" name="submit" value="SUBMIT"></td>
             </tr>
           </tfoot>
         </table>

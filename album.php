@@ -8,6 +8,7 @@
 <html>
   <head>
     <title>ALBUM</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="menu">
@@ -21,9 +22,10 @@
         </ul>
       </nav>
     </div>
-    <div>
+    <div style="padding-top: 100px;">
+      <h1 align="center">Create Album</h1>
       <form method="post" enctype="multipart/form-data">
-        <table cellspacing="40">
+        <table cellspacing="50" align="center" style="border: 1px solid black;box-shadow: 5px 10px #888888;">
           <tr>
             <td><b>Album Name*:</b></td>
             <td><input type="text" name="albumname" size="30" placeholder="Enter the Album Name" required></td>

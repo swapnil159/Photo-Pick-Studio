@@ -6,6 +6,7 @@
     <title>REGISTER</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="register.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="menu">
@@ -19,11 +20,11 @@
         </ul>
       </nav>
     </div>
-    <div ng-app="registration">
-      <h1>REGISTER</h1>
+    <div ng-app="registration" style="padding-top: 200px;">
+      <h1 align="center" >REGISTER</h1>
       <form name="registrationform"  ng-controller="reg" ng-submit="send()">
         <div>
-          <table cellspacing="40">
+          <table cellspacing="40" style="border: 1px solid black;box-shadow: 5px 10px #888888;" align="center">
             <div>
               <tr>
                 <td>

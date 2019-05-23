@@ -16,6 +16,7 @@
 <html>
   <head>
     <title>UPLOAD PICS</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="menu">
@@ -29,12 +30,13 @@
         </ul>
       </nav>
     </div>
-    <div>
-      <img src=<?php echo "ALBUMS/".$user."/".$album."/".$cover ?> height="300">
+    <div align="center" style="padding-top: 100px;">
+      <img src=<?php echo "ALBUMS/".$user."/".$album."/".$cover ?> height="300" width="300">
       <h1 align="center"><?php echo $album ?></h1>
     </div>
     <form method="post" enctype="multipart/form-data">
-        <table>
+      <h1 align="center" style="padding-top:80px;">Add Photos</h1>
+        <table cellspacing="50" align="center" style="border: 1px solid black;box-shadow: 5px 10px #888888;">
           <tr>
             <td><b>Select Photo*</b></td>
             <td><input type='file' name="file" required></td>
@@ -50,7 +52,7 @@
                 <input id="pro" type="radio" name="privacy" value="protected">Protected</td>
           </tr>
           <tr>
-            <td align="center"><a href="dashboard.php">Skip</a></td>
+            <td align="center"><a href="dashboard.php" style="text-decoration: none;">Skip</a></td>
             <td align="center"><input type='submit' value='Upload' id='upload' name="submit"></td>
           </tr>
         </table>

@@ -9,6 +9,7 @@
   <title>UPDATE PROFILE</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="profile_update.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="profile" ng-controller="upd" >
   <div id="menu">
@@ -22,12 +23,14 @@
       </ul>
     </nav>
   </div>
+  <div style="padding-top: 100px">
   <form>
     <table cellspacing="40">
       <tr>
         <td><img height="200" src=<?php echo "pp/".$user ?> alt="No Image" onerror=this.src="def.jpg"></td>
       </tr>
       <tr>
+        <td>Select File:</td>
         <td><input id="file" name="file" type="file"></td>
       </tr>
         <td><button ng-click="upload()">UPLOAD</button></td>
@@ -36,10 +39,12 @@
       </tr>
     </table>
   </form>
+</div>
   <hr>
+  <h1 align="center">Update</h1>
   <form name="pro_upd"  ng-submit="update()" >
   <div>
-    <table cellspacing="40">
+    <table cellspacing="40" align="center" style="border: 1px solid black;box-shadow: 5px 10px #888888;">
       <div>
         <tr>
           <td>
@@ -96,7 +101,7 @@
         </tr>
       <div>
         <tr>
-          <td colspan="3" align="center"><input type="submit" name="submit" size="10" value="submit"></td>
+          <td colspan="3" align="center"><input type="submit" name="submit" size="20" value="SUBMIT"></td>
         </tr>
       </div>
     </table>

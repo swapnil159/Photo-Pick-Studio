@@ -13,6 +13,7 @@
     <title>PROFILE PAGE</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="profile.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="menu">
@@ -26,7 +27,7 @@
         </ul>
       </nav>
     </div>
-      <h1>WELCOME  <?php echo $user ?> </h1>
+      <h1 style="padding-top: 100px;">WELCOME  <?php echo $user ?> </h1>
     </div>
     <div>
       <table cellspacing="30">
@@ -49,12 +50,18 @@
       </table>
       <hr>
     </div>
+    <h1 align="center">Albums</h1>
     <div ng-app="profile" ng-controller="display">
-      <table>
+      <table cellspacing="40" align="center" style="border: 1px solid black;box-shadow: 5px 10px #888888;" >
+        <tr>
+          <th>Album name</th>
+          <th>Created on Date Time</th>
+          <th>Description</th>
+        </tr>
         <tr ng-repeat="x in disp" ng-controller="edel">
           <td><img height="100" width="100" ng-src="{{x.path}}"><br />
           <a ng-href="pic_display.php?name={{x.name}}">{{x.name}}</a></td>
-          <td>Created on {{x.dat}}</td>
+          <td>{{x.dat}}</td>
           <td>{{x.desc}}</td>
           <td><button ng-click="edit()" ng-model="obj.name">EDIT</button></td>
           <td><button ng-click="delete()" ng-model="obj.name">DELETE</button></td>

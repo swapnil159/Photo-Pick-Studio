@@ -3,6 +3,7 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="upload.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="menu">
@@ -16,10 +17,10 @@
         </ul>
       </nav>
     </div>
-    <div ng-app="upload">
+    <div ng-app="upload" style="padding-top: 250px;">
       <form name="profile_pic" ng-controller="upload_pic">
-      <table>
-        <caption>Upload Profile Picture</caption>
+      <table cellspacing="40" style="border: 1px solid black;box-shadow: 5px 10px #888888;" align="center">
+        <caption><b>Upload Profile Picture<b></caption>
         <tr>
             <td><b>Profile Picture</b></td>
             <td><input id="file" name="file" type="file"></td>

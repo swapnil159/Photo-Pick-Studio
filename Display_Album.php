@@ -12,6 +12,7 @@
 <html>
   <head>
     <title>DISPLAY ALBUM</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="menu">
@@ -25,11 +26,11 @@
         </ul>
       </nav>
     </div>
-    <div>
+    <div style="padding-top: 150px;" align="center">
       <img height="500" src=<?php echo "ALBUMS/".$user."/".$album."/".$cover ?>>
     </div>
     <div>
-      <table cellspacing="40">
+      <table cellspacing="40" style="border: 1px solid black;box-shadow: 5px 10px #888888;margin-top:150px;" align="center">
         <?php
           $query="SELECT Photo_Name,date_time,Description FROM Photo WHERE Username='$user' AND Album_Name='$album'";
           $result=mysqli_query($conn,$query);

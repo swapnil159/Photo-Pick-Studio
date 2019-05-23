@@ -8,6 +8,7 @@
     <title>ALBUM</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="disp_alb.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body >
     <div id="menu">
