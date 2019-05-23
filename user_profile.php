@@ -1,5 +1,10 @@
 <?php
   include 'conn.php';
+
+  if(!$_SESSION['user'])
+  {
+    header('location: index.php');
+  }
   $user=$_SESSION['user'];
 ?>
 
@@ -22,14 +27,24 @@
         </ul>
       </nav>
     </div>
+      <div style="padding-top:100px;">
       <img height="200" src=<?php echo "pp/".$user ?> alt="Not Found" onerror=this.src="def.jpg">
-      <table cellspacing="40" align="center">
+      <h3><?php echo $user ?></h3>
+      <table cellspacing="40" align="center" style="border: 1px solid black;box-shadow: 5px 10px #888888">
+        <tr>
+          <th colspan="2" align="right">Album Name</th>
+          <th>Created On</th>
+          <th>Album description</th>
+        </tr>
         <tr ng-repeat="x in prof" ng-controller="likes">
           <td><img ng-src={{x.path}} height="100" width="100"></td>
-          <td><a ng-href="disp_alb.php?user={{name}}&alb={{x.album}}">{{x.album}}</a></td>
+          <td><a style="text-decoration: none;" ng-href="disp_alb.php?user={{name}}&alb={{x.album}}">{{x.album}}</a></td>
+          <td>{{x.dat}}</td>
+          <td>{{x.desc}}</td>
           <td><button ng-click="change()" ng-model="obj.name">{{x.state}}</button></td>
         </tr>
       </table>
+    </div>
     </div>
   </body>
 </html>

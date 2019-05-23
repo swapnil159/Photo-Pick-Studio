@@ -1,6 +1,9 @@
 <?php
   include 'conn.php';
-  $user=$_SESSION['user'];
+  if($_SESSION['user'])
+  {
+    $user=$_SESSION['user'];
+  }
 ?>
 <!Doctype html>
 <html>
@@ -22,17 +25,20 @@
         </ul>
       </nav>
     </div>
-    <div ng-app="photo" ng-controller="pic">
-      <table >
-        <tr>
-          <h1>{{album}}</h1>
-        </tr>
+    <div ng-app="photo" ng-controller="pic" style="padding-top: 150px;">
+          <h1 align="center">{{album}}</h1>
+        <table cellspacing="40" align="center" style="border: 1px solid black;box-shadow: 5px 10px #888888">
+          <tr>
+            <th colspan="2" align="right">Album Name</th>
+            <th>Created On</th>
+            <th>Photo description</th>
+          </tr>
         <tr ng-repeat="x in pic" ng-controller="likes">
           <td><img height="100" width="100" ng-src="{{x.path}}" alt="No Images found"></td>
-          <td>Created on {{x.dat}}</td>
+          <td>{{x.dat}}</td>
           <td>{{x.desc}}</td>
           <td><button ng-click="change()" ng-model="obj.name">{{x.state}}</button></td>
-          <td><a ng-href="view_pic.php?user={{name}}&album={{album}}&pic={{x.pic}}">VIEW</a></td>
+          <td><a style="text-decoration: none;" ng-href="view_pic.php?user={{name}}&album={{album}}&pic={{x.pic}}">VIEW</a></td>
         </tr>
       </table>
     </div>

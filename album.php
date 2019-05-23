@@ -1,5 +1,11 @@
 <?php
   include 'conn.php';
+
+  if(!$_SESSION['user'])
+  {
+    header('location: index.php');
+  }
+
   $user=$_SESSION['user'];
  ?>
 
@@ -64,6 +70,7 @@
       $filename=$file['name'];
       $privacy=$_POST['privacy'];
 
+
       mkdir("/var/www/html/ALBUMS/".$user."/".$album);
       $my_date = date("Y-m-d H:i:s");
 
@@ -82,13 +89,10 @@
         echo '<script type="text/javascript">
         alert("Album already exists");
         </script>';
-        header('pages/location: album.php');
+        header('location: album.php');
       }
       $result=mysqli_query($conn,$query);
-      if(move_uploaded_file($file['tmp_name'],$location."/".$file['name']))
-      {
-        echo "Success";
-      }
+      move_uploaded_file($file['tmp_name'],$location."/".$file['name']);
 
       header('location: crtalbum.php?album='.$album);
     }

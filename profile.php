@@ -1,5 +1,10 @@
 <?php
   include 'conn.php';
+
+  if(!$_SESSION['user'])
+  {
+    header('location: index.php');
+  }
   $user=$_SESSION['user'];
 
   $query="SELECT First_Name,Last_Name,Gender,Email FROM Register WHERE Username='$user'";

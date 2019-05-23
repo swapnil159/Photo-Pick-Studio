@@ -1,5 +1,10 @@
 <?php
   include 'conn.php';
+
+  if(!$_session['user'])
+  {
+    header('location: index.php');
+  }
   $user=$_SESSION['user'];
 ?>
 

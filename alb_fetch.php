@@ -22,7 +22,7 @@
   }
 
 
-  $query="SELECT Photo_Name,date_time,Description FROM Photo WHERE Username='$name' AND Album_Name='$album'";
+  $query="SELECT Photo_Name,date_time,Description FROM Photo WHERE Username='$name' AND Album_Name='$album' AND Privacy='public'";
   $result=mysqli_query($conn,$query);
 
   $rows=array();

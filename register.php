@@ -9,18 +9,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="menu">
-      <nav id="bar">
-        <ul>
-          <li><a href="dashboard.php">HOME</a>
-          <li><a href="profile.php">VIEW PROFILE</a>
-          <li><a href="album.php">CREATE ALBUM</a>
-          <li><a href="profile_update.php">UPDATE PROFILE</a>
-          <li><a href="log_out.php">LOG OUT</a>
-        </ul>
-      </nav>
-    </div>
-    <div ng-app="registration" style="padding-top: 200px;">
+    <div ng-app="registration" style="padding-top: 100px;">
       <h1 align="center" >REGISTER</h1>
       <form name="registrationform"  ng-controller="reg" ng-submit="send()">
         <div>
@@ -51,7 +40,7 @@
                   <b>Gender*:</b>
                 </td>
                 <td>
-                  <input id="gm" type="radio" value="male" name="gender" checked="checked" ng-model="user.gender" ng-value="'male'">Male
+                  <input id="gm" type="radio" value="male" name="gender" checked ng-model="user.gender" ng-value="'male'">Male
                   <input id="gf" type="radio" name="gender" value="female" ng-model="user.gender" ng-value="'female'">Female
                 </td>
               </tr>

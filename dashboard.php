@@ -1,6 +1,10 @@
 <?php
   include 'conn.php';
 
+  if(!$_SESSION['user'])
+  {
+    header('location: index.php');
+  }
   $user=$_SESSION['user'];
 ?>
 
@@ -28,7 +32,7 @@
     <table style="padding-top: 100px;" cellspacing="20">
       <tr>
         <td><img height="100" width="100" src=<?php echo "pp/".$user ?> alt="Not Found" onerror=this.src="def.jpg"></td>
-        <td style="vertical-align:bottom;text-align:center;"><h2> <?php echo $user ?><h2></td>
+        <td style="vertical-align:bottom;text-align:center;"><h2> <?php  echo $user ?><h2></td>
       </tr>
     </table>
     <hr>

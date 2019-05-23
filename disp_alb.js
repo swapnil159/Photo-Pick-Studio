@@ -4,7 +4,7 @@ app.config(function($locationProvider){
   $locationProvider.html5Mode({enabled: true,requireBase: false});
 });
 
-app.controller('pic',function($scope,$http,$location){
+app.controller('pic',function($scope,$http,$location,$window){
   var temp=$location.search().user;
   var temp1=$location.search().alb;
   $scope.name=temp;

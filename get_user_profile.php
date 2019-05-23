@@ -7,7 +7,7 @@
 
   $username = $request->Name;
 
-  $query="SELECT Album_Name,Cover FROM Album WHERE Username='$username' AND Privacy='public'";
+  $query="SELECT Album_Name,Cover,Album_Description,date_time FROM Album WHERE Username='$username' AND Privacy='public'";
   $result=mysqli_query($conn,$query);
 
   $rows=array();
@@ -27,7 +27,7 @@
       $state="Like";
     }
 
-    $temp=Array("album"=>$row['Album_Name'],"path"=>"ALBUMS/".$username."/".$row['Album_Name']."/".$row['Cover'],"state"=>$state);
+    $temp=Array("album"=>$row['Album_Name'],"path"=>"ALBUMS/".$username."/".$row['Album_Name']."/".$row['Cover'],"state"=>$state,"desc"=>$row['Album_Description'],"dat"=>$row['date_time']);
     $rows[]=$temp;
   }
 

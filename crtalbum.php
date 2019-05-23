@@ -1,6 +1,11 @@
 <?php
   include 'conn.php';
 
+  if(!$_SESSION['user'])
+  {
+    header('location: index.php');
+  }
+
   $user=$_SESSION['user'];
   $album=$_GET['album'];
 
@@ -31,7 +36,7 @@
       </nav>
     </div>
     <div align="center" style="padding-top: 100px;">
-      <img src=<?php echo "ALBUMS/".$user."/".$album."/".$cover ?> height="300" width="300">
+      <img height="300" width="1000" src=<?php echo "ALBUMS/".$user."/".$album."/".$cover ?>>
       <h1 align="center"><?php echo $album ?></h1>
     </div>
     <form method="post" enctype="multipart/form-data">

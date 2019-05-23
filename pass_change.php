@@ -22,7 +22,7 @@
 
     $elapsed=(strtotime($my_date)-strtotime($satime));
 
-    if($elapsed>60)
+    if($elapsed>3600)
     {
       session_destroy();
       echo "OTP Expired";

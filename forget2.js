@@ -14,9 +14,10 @@ app.controller('pass',function($scope,$http){
     var request=$http(config);
     request.then(function(response){
       alert(response.data);
-      var str="Password changed successfully";
+      var str="Password changed successfull";
       var temp=response.data;
-      if(str===temp)
+      console.log(3);
+      if(str==temp)
       {
         location='dashboard.php';
       }
