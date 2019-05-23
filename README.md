@@ -24,9 +24,14 @@ As of now this application provides the following features.
 ## Set-up Instructions
 
 1. First make sure you have MySQL, PHP and Apache installed (latest versions
-   are fine).
+   are fine). Also make sure you have MySQL native driver installed,
+
+   ```shell
+   sudo apt-get install php-mysqlnd
+   ```
 
 2. Clone the repository using, `git clone https://github.com/swapnil159/Photo-Gallery.git`.
+
 3. Move code from the `Photo-Gallery` folder to `/var/www/html` in your system.
 
 4. Dump the provided fixture `db.sql` in MySQL database, using the following steps.
