@@ -34,7 +34,9 @@
         $query = "INSERT INTO Register (First_Name,Last_Name,Gender,Email,Username,Password) VALUES ('$fname','$lname','$gender','$email','$username','$password')";
         $result = mysqli_query($conn,$query);
         $_SESSION['user']=$username;
-        mkdir("/var/www/html/ALBUMS/".$username);
+        $oldmask = umask(0);
+        mkdir("/var/www/html/ALBUMS/".$username,0777);
+        umask($oldmask);
 
         require_once('PHPMailer/PHPMailerAutoload.php');
         $mail = new PHPMailer;
