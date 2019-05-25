@@ -1,7 +1,8 @@
 <?php
   include 'conn.php';
-  if($_SESSION['user'])
+
   $user=$_SESSION['user'];
+
   $rows = array();
   $query="SELECT Username FROM Register WHERE Username!='$user'";
   $result=mysqli_query($conn,$query);
