@@ -54,7 +54,7 @@ As of now this application provides the following features.
 
 5. Make the following replacment throughout the code,
 
-   - Replace `$password='swapnil159';` with `$password='<your database password>;`
+   - Replace `$password='swapnil159';` with `$password='<your database password>;`to connect with the database.
    - This can be easily done by searching the former string.
 
 6. Now provide permissions to write in `pp` and `ALBUMS` folder.
