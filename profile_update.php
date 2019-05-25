@@ -1,7 +1,7 @@
 <?php
   include 'conn.php';
 
-  if(!$_session['user'])
+  if(!$_SESSION['user'])
   {
     header('location: index.php');
   }
